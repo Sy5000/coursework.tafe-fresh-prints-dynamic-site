@@ -1,0 +1,159 @@
+/* Add a black background color to the top navigation */
+
+
+body{
+	font-family: helvetica, serif, black;
+	height:100%;
+	margin:0;
+	
+}
+nav {
+  overflow: hidden;
+	width:100%;
+	border-bottom: solid 1px black;
+}
+/* Style the links inside the navigation bar */
+nav a {
+  float: right;
+	color:black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+nav a:hover {
+  background-color: #ddd;
+}
+
+/* Add a color to the active/current link */
+nav a.current {
+		border-bottom: 2px solid rgba(0,0,0,1.00);
+    color: ;
+}
+/* horizontal rule */
+hr {
+	width: 84%;
+	margin: 10px auto 10px auto;
+}
+h1 {font-size: 96px}
+.center {
+	margin:auto;
+	width:84%;
+	/*border: 3px solid green;*/
+
+}
+.flex {
+	display:flex;
+	justify-content: center;
+}
+.flexwrap{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.cat {
+	width:320px;
+	height:220px;
+	margin:20px;
+	text-align: center;
+}
+.cat img:hover {
+	transform: rotate(0deg) scale(1.10);
+	z-index: 9000;
+}
+.hero-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url('../images/hero1greenT.jpg');
+    height: 45vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero-text {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.instructions_container {
+	text-align: center;
+	background-color: #89D0CA;
+	padding:2.5% 0;
+}
+.category_container {
+	padding:2.5% 0;
+	text-align: center;
+}
+.icon_box {
+	width:25%;
+	padding:10px;
+	margin:10px;
+}
+.accordian_wrap {
+  width:25%;
+	background-color: yellow;
+	margin:25px;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+footer {
+	background-color: black;
+	color:white;
+}
+footer ul {
+	list-style: none;
+}
+.footer_left {
+	padding:10px 150px 0px 0px;
+	width:50%;
+}
+.footer_mid {
+	padding:10px 0px;
+	width:25%
+
+}
+.footer_right {
+	padding:10px 0px;
+	width:25%
+
+}
+.social {padding:10px;}

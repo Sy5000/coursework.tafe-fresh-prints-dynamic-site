@@ -1,0 +1,534 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  max-width: 100%;
+  font-size: 16px; /* Root element ref x=1rem */
+  font-weight: 500;
+}
+/* ----- layout wrappes -----*/
+.flex {
+	display:flex;
+}
+
+.split {
+	justify-content: space-between;
+}
+
+.grid {
+  display:grid;
+  grid-gap:20px; /* grid column then row gaps */
+  padding:0px;
+  /* border:2px solid green; */
+}
+/* category item page */
+.col2 {
+  grid-template-columns: repeat(2, 1fr);
+  margin:0 5vw;
+  text-align: left;
+}
+/* home page */
+.col3 {grid-template-columns: repeat(3, 1fr);}
+/* footer */
+.col4 {
+  grid-template-columns: 2fr repeat(2,1fr);
+  margin:0 5vw;
+  text-align: left;
+}
+
+.flexwrap{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+  margin:auto;
+}
+.flexend{
+  display:flex;
+  justify-content: flex-end;
+}
+.error {
+  color:red;
+}
+span {
+  display:block;
+}
+.hidden {
+  display:none;
+}
+/* ------ responsive nav menu + subnav ------ */
+ul {
+  list-style: none;
+}
+
+.topnav {
+  overflow: hidden;
+  /*background-color:
+  width:98vw;*/
+  margin: auto;
+  border-bottom: 1px solid black;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #89D0CA; /*turquoise*/
+  color: black;
+}
+
+.topnav a.active {
+  border-bottom: 2px solid black;
+  background-color: #89D0CA; /*turquoise*/
+}
+
+.topnav .icon {
+  display: none;
+}
+nav {
+  border-bottom: 1px solid black;
+}
+/* sub nav / second row navbar */
+.subnav {
+  overflow: hidden;
+  width: 100%;
+  margin: auto;
+  justify-content: flex-end;
+  /* background-color: lightgrey;
+  margin-bottom: 1px solid black;
+  border:1px solid orange; */
+}
+.subnav a {
+  padding: 14px 16px;
+  overflow: hidden;
+}
+.subnav a:hover {
+  border-bottom: none;
+  background-color: #89D0CA;
+}
+/* ----- hero image and header text ----- */
+.hero-img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),url('../images/hero1greenT.jpg');
+    height: 45vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.hero-text {
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+/*  ----- category item pages ----- */
+.item-img {
+  /* background-image: url('../images/itemHeroMensT6.jpg'); */
+  opacity: 0.8;
+  height:50vh;
+  width: 75vw;
+  margin: 0vw 5vw;
+  background-position: left;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.img1{
+  background-image: url('../images/itemHeroMensT6.jpg');
+}
+.img2{
+  background-image: url('../images/itemHeroWomensT.jpg');
+}
+.img3{
+  background-image: url('../images/itemHeroHoodie.jpg');
+}
+.img4{
+  background-image: url('../images/itemHeroKids.jpg');
+}
+
+.item-text {
+  text-align: right;
+  position: absolute;
+  top: 33%;
+  right: -28vw;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+.item-text h1 {
+  font-size: 3rem;
+}
+/* horizontal rule - page break */
+/* Style the horizontal ruler */
+hr {
+	width: 98%;
+	margin: 0.8rem auto 0.8rem auto;
+  border: 1px solid #f1f1f1;
+}
+.section_container hr {
+  width:100%;
+}
+a:link, a:visited, a:hover, a:active { text-decoration: none; } /*remove underline from links */
+
+.admin {
+  border:4px solid yellow;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+/* section semantic em styling */
+.section_container {
+	padding:2.5% 0;
+	text-align: center;
+  /* border:2px red solid; */
+}
+#instructions_container {
+	background-color: #89D0CA; /*turquoise*/
+}
+/* category link divs */
+.cat {
+	width:320px;
+	height:220px;
+	margin:20px;
+	text-align: center;
+}
+.cat img:hover {
+	transform: rotate(0deg) scale(1.1);
+	z-index: 9000;
+}
+/* scalable icons */
+.grid > div > img {
+  width:auto;
+  max-height:180px;
+  /* border: 3px solid orange; */
+}
+/* ----- accordian bulk discount menus ----- */
+.accordian_wrap {
+  width:1fr; /* 1fraction of free space = no overspill */
+	/* background-color: grey; /*/
+	margin:16px;
+}
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+footer {
+  background-color: black;
+  color:white;
+  width:100%; /* bug 100vw causes scrollbar */
+  text-align: center;
+  padding:1.5rem 0;
+}
+.social {
+  margin-top: 2rem;
+}
+footer input[type=text]{
+  width:50%;
+  background-color:black;
+  border:1px solid white;
+}
+footer input[type=text]:focus, {
+  background-color: black;
+  outline: none;
+}
+
+/* ----- static forms and backgrounds ----- */
+.formbkg {
+  background-color: lightgrey;
+  /* border: 5px dotted pink;*/
+
+}
+#formOrder form {
+  width:60vw;
+  max-width: 600px;
+}
+.formbkg form {
+width:88vw;
+margin: auto;
+background-color: white;
+padding:2rem;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+text-align: left;
+}
+textarea {
+  max-width:100%;
+}
+/* ----- modal signup forms ----- */
+/* Full-width input fields */
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 15px;
+  margin: 0.25rem 0 0.25rem 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus,input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 2rem;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+/* Modal order form /Size adjust */
+.modal-content-order-form, {
+  padding-top:0px;
+  background-color: #fefefe;
+  margin: 0% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 33%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+/* ------- modal end------ */
+
+/* Category item page */
+.col2 h2 {
+  font-size: 2.5rem;
+  margin: 1rem auto;
+}
+.col2 p {
+  font-weight: 100;
+  margin: 1rem auto;
+}
+table {
+  width:100%;
+  border-collapse:collapse;
+}
+tr {
+  border: 1px solid lightgrey;
+}
+td, th {padding:0.25rem}
+
+.itemDetails a {
+  border:1px solid black;
+  color:black;
+  padding:auto;
+  font-weight: 500;
+  padding:1rem;
+  text-align: center;
+  display:block;
+}
+.itemDetails a:hover {
+  border:2px solid black;
+  }
+
+.colour1 {
+  width:2rem;
+  height:2rem;
+  padding:2px;
+  background-color: black;
+  border: 5px solid darkgrey;
+  display:inline-block;
+}
+.colour2 {
+  width:2rem;
+  height:2rem;
+  background-color: white;
+  border: 5px solid darkgrey;
+  display:inline-block;
+}
+/*----- order form -----*/
+#formOrder img{
+  width:100%;
+  height:100%;
+}
+#formOrder label {
+  padding:1rem 0 1rem 0;
+}
+#formOrder input[type=text], #formOrder input[type=email] {
+  width: 50%;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+/* size buttons */
+.sizeBut {
+  display:inline-block;
+  width:auto;
+  color: #89D0CA; /*turquoise*/
+  border:2px solid #89D0CA; /*turquoise*/
+  padding:0.75rem;
+  font-weight: 600;
+  background-color: white;
+}
+.orderBut {
+  width:60%;
+
+  background-color: white;
+  border:2px solid grey;
+  color:grey;
+}
+.quoteBut {
+  width:auto;
+  border:2px solid #89D0CA; /*turquoise*/
+  background-color: white;
+  color:#89D0CA /* turquoise */
+}
+#formOrder p {
+  text-align: right;
+}
+s {
+  font-weight: 500;
+}
+select {padding:0.25rem;margin:0.25rem;}
+
+@media screen and (max-width: 600px) {
+  /*.topnav a:not(:first-child) {display: none;} default*/
+  .topnav {max-width: 100%;}
+  .topnav a.canHide {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+  .topnav a:hover {border-bottom: none;}
+  .topnav a.active {border-bottom: none; }
+	.flex {display: block;} /* burger-icon drop down menu block to fill width */
+  .grid {display: block;} /* dislay instructions container img's in a single col */
+
+  .item-text { /* adjust item page hero text on smaller screens */
+    right:-46vw;
+  }
+  .itemDetails div {
+    display:inline-block;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
